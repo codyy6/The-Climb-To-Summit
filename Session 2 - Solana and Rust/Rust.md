@@ -7,7 +7,7 @@ Rust is a systems programming language focused on safety, speed, and concurrency
 
 1. #[program]
 
-```
+```rs
 #[program]
 pub mod todo_list_app {
     // program logic
@@ -18,7 +18,7 @@ Purpose: This defines the main Solana program (or smart contract). Inside this m
 Anchor’s Role: Anchor uses this macro to group together all the program’s functions and make them callable by the Solana runtime. It handles the boilerplate code needed for Solana programs.
 
 2. Context Structs
-```
+```rs
 #[derive(Accounts)]
 pub struct AddingTask<'info> {
     #[account(init, payer = author, space = Task::LEN)]
@@ -38,7 +38,7 @@ Signer<'info>: Specifies that the author must sign the transaction.
 Context<T>: The ctx parameter in your program functions is of type Context<T>, where T refers to the specific account struct (e.g., AddingTask, UpdatingTask). This struct encapsulates the required accounts and other data necessary for the function.
 
 3. Account Struct
-```
+```rs
 #[account]
 pub struct Task {
     pub author: Pubkey,
@@ -57,7 +57,7 @@ Field Types:
  - i64: Stores timestamps for created_at and updated_at as 64-bit integers.
 
 4. Account Size Calculation
-```
+```rs
 const DISCRIMINATOR: usize = 8;
 const PUBLIC_KEY_LENGTH: usize = 32;
 const BOOL_LENGTH: usize = 1;
@@ -82,7 +82,7 @@ Size Breakdown:
 Pubkey (32 bytes), bool (1 byte), String (4 + 400 * 4 bytes), and i64 (8 bytes) make up the rest of the account size.
 
 5. Error Handling with #[error_code] Enum
-```
+```rs
 #[error_code]
 pub enum ErrorCode {
     #[msg("The text is too long")]
@@ -94,7 +94,7 @@ pub enum ErrorCode {
 Error Enum: The enum ErrorCode represents the possible errors that can occur in the smart contract. The #[msg] attribute allows you to define human-readable error messages.
 
 6. Result Type and Error Handling
-```
+```rs
 pub fn adding_task(ctx: Context<AddingTask>, text: String) -> Result<()> {
     if text.chars().count() > 400 {
         return Err(ErrorCode::TextTooLong.into());
@@ -110,7 +110,7 @@ Error Handling: You use the Err(ErrorCode::TextTooLong.into()) pattern to return
 The Ok(()): It signifies the function executed successfully.
 
 7. Signer Validation
-```
+```rs
 pub struct UpdatingTask<'info> {
     #[account(mut, has_one = author)]
     pub task: Account<'info, Task>,
@@ -122,14 +122,14 @@ has_one = author: This constraint ensures that the author account provided to th
 Signer<'info>: The author account must be a signer of the transaction, meaning they must provide a cryptographic signature proving their authority to perform the operation.
 
 8. Mutability of Accounts
-```
+```rs
 #[account(mut)]
 pub task: Account<'info, Task>,
 ```
 #[account(mut)]: This keyword indicates that the account will be modified. Without this, the program will treat the account as read-only and will not allow updates to its data.
 
 9. Program ID Declaration
-```
+```rs
 declare_id!("5sLam5uVHATWPMhhhXrR1i2adxwE5GnLUMhEbreBEa7g");
 ```
 declare_id!: This macro declares the public key of the program. It identifies your program on the Solana blockchain and links your code to a specific on-chain program address.

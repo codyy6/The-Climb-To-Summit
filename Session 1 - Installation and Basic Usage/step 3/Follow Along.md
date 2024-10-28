@@ -11,44 +11,44 @@
 1. Open VSCode.
 2. Navigate to the directory where you want to create your project either through CLI or by opening the folder.
 3. Use Create React App to set up a new React project:
-   ```
-   npx create-react-app <your-project-name>
-   ```
+    ```
+    npx create-react-app <your-project-name>
+    ```
 
 ## Step 3: Create an Anchor Framework
 
 1. Within the same directory, run the following command to create an Anchor Framework:
-   ```
-   anchor init <new-workspace-name>
-   ```
+    ```
+    anchor init <new-workspace-name>
+    ```
 
 ## Step 4: Initialize a Git Repository
 
 1. Create a README file:
-   ```
-   echo "# test" >> README.md
-   ```
+    ```
+    echo "# test" >> README.md
+    ```
 2. Initialize a new Git repository:
-   ```
-   git init
-   ```
+    ```
+    git init
+    ```
 3. Add all files to the staging area:
-   ```
-   git add .
-   ```
+    ```
+    git add .
+    ```
 4. Commit the changes:
-   ```
-   git commit -m "first commit"
-   ```
+    ```
+    git commit -m "first commit"
+    ```
 5. Rename the default branch to `main`:
-   ```
-   git branch -M main
-   ```
+    ```
+    git branch -M main
+    ```
 6. Add the remote repository:
-   ```
-   git remote add origin https://github.com/codyy6/test.git
-   ```
+    ```
+    git remote add origin https://github.com/codyy6/test.git
+    ```
 7. Push the changes to the remote repository:
-   ```
-   git push -u origin main
-   ```
+    ```
+    git push -u origin main
+    ```
