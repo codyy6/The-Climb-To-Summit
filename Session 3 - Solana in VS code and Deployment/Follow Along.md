@@ -24,13 +24,21 @@ cd <project name>
 
 # Step 3
 
+Copy your code from your playground code last week, then paste it inside "/<project name>/programs/<project name>/src/lib.rs"
+
+# Step 4
+
+Upgrade your code now. Change it from a to do list, into a goal list. Do the program based on your creativity.
+
+# Step 5
+
 Build the project
 
 ```sh
 anchor build
 ```
 
-# Step 4
+# Step 6
 
 Run tests
 
@@ -38,7 +46,7 @@ Run tests
 anchor test
 ```
 
-# Step 5
+# Step 7
 
 Deploy the project
 
@@ -46,7 +54,7 @@ Deploy the project
 anchor deploy
 ```
 
-# Step 6
+# Step 8
 
 Interact with the deployed program
 
