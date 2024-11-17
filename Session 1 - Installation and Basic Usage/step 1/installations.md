@@ -17,4 +17,4 @@ Cargo                           https://www.rust-lang.org/tools/install
 
 # Framework
 Anchor (Rust)                   https://www.anchor-lang.com/docs/installation  
-React (Web)                     https://nodejs.org/en
+React (Web)                     https://react.dev/
