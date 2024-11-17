@@ -9,10 +9,10 @@ Visual Studio Code              https://code.visualstudio.com/
 
 # Programming Languages
 Rust (Smart Contract)           https://www.rust-lang.org/tools/install  
-Javascript (Web Dev)            https://nodejs.org/en
+JavaScript (Web Dev)            https://bun.sh/
 
 # Package Manager
-Npm                             https://nodejs.org/en  
+Bun                             https://bun.sh/  
 Cargo                           https://www.rust-lang.org/tools/install     
 
 # Framework

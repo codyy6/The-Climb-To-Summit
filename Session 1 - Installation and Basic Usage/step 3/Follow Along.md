@@ -14,7 +14,7 @@
 
 3. Use Create React App to set up a new React project:
     ```
-    npx create-react-app <your-project-name>
+    bunx create-react-app <your-project-name>
     ```
 
 ## Step 3: Create an Anchor Framework
