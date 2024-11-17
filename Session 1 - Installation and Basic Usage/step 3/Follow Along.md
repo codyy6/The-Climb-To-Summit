@@ -17,9 +17,9 @@
     bunx create-react-app <your-project-name>
     ```
 
-## Step 3: Create an Anchor Framework
+## Step 3: Create an Anchor Workspace
 
-1. Within the same directory, run the following command to create an Anchor Framework:
+1. Within the same directory, run the following command to create an Anchor workspace:
     ```
     anchor init <new-workspace-name>
     ```
@@ -57,7 +57,7 @@
 6. Add the remote repository:
 
     ```
-    git remote add origin https://github.com/codyy6/test.git
+    git remote add origin https://github.com/<GITHUB_USER_NAME>/<REPOSITORY_NAME>.git
     ```
 
 7. Push the changes to the remote repository:
