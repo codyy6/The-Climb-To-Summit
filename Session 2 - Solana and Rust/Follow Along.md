@@ -1,9 +1,9 @@
 # Step 1: Visit the Solana Playground Website:
-Open your web browser and go to Solana Playground (https://beta.solpg.io/).
+Open your web browser and go to [Solana Playground](https://beta.solpg.io/).
 
 # Step 2: Create a New Project:
 Click on "Create New Project" to start a new Solana project. You can choose from various templates or start from scratch.
-In this session, select Anchor(Rust) and input ur project name.
+In this session, select Anchor(Rust) and input your project name.
 
 ## Step 3: Write Your Code:
 
@@ -13,7 +13,6 @@ In this session, select Anchor(Rust) and input ur project name.
     ```
 
 2. **Declare the program ID:**
-
     ```
     declare_id!("");
     ```
@@ -128,11 +127,11 @@ In this session, select Anchor(Rust) and input ur project name.
 
      impl Task {
           const LEN: usize = DISCRIMINATOR +
-                PUBLIC_KEY_LENGTH +
-                BOOL_LENGTH +
-                TEXT_LENGTH +
-                TIMESTAMP_LENGTH +
-                TIMESTAMP_LENGTH;
+               PUBLIC_KEY_LENGTH +
+               BOOL_LENGTH +
+               TEXT_LENGTH +
+               TIMESTAMP_LENGTH +
+               TIMESTAMP_LENGTH;
      }
      ```
 
@@ -144,20 +143,27 @@ In this session, select Anchor(Rust) and input ur project name.
           TextTooLong,
      }
      ```
-```
+
 
 Compile Your Code:
 
 Click on the "Build" button to compile your code. The playground will show any compilation errors and warnings.
+
+
 Deploy Your Program:
 
 Once your code is compiled successfully, you can deploy it to the Solana blockchain. Click on the "Deploy" button and follow the instructions.
+
+
 Interact with Your Program:
 
 After deployment, you can interact with your smart contract using the provided interface. You can send transactions, call functions, and view the state of your program.
+
+
 Debug and Test:
 
 Use the debugging tools provided by Solana Playground to test and debug your smart contract. You can set breakpoints, inspect variables, and step through your code.
-Save and Share:
 
+
+Save and Share:
 Save your project and share it with others using the provided link. Solana Playground allows you to collaborate with other developers easily.
