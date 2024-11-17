@@ -1,5 +1,5 @@
 # Step 1: Visit the Solana Playground Website:
-Open your web browser and go to Solana Playground (https://beta.solpg.io/).
+Open your web browser and go to [Solana Playground](https://beta.solpg.io/).
 
 # Step 2: Create a New Project:
 Click on "Create New Project" to start a new Solana project. You can choose from various templates or start from scratch.
