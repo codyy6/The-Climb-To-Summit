@@ -32,13 +32,22 @@ Upgrade your code now. Change it from a to do list, into a goal list. Do the pro
 
 # Step 5
 
+Make sure your program id is properly derived from the program keypair.
+
+
+```sh
+anchor keys sync
+```
+
+# Step 6
+
 Build the project.
 
 ```sh
 anchor build
 ```
 
-# Step 6
+# Step 7
 
 Run tests.
 
@@ -46,7 +55,7 @@ Run tests.
 anchor test
 ```
 
-# Step 7
+# Step 8
 
 Deploy the project.
 
@@ -54,7 +63,7 @@ Deploy the project.
 anchor deploy
 ```
 
-# Step 8
+# Step 9
 
 Interact with the deployed program.
 
