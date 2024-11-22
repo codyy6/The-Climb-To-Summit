@@ -20,9 +20,10 @@ In this session, select Anchor(Rust) and input ur project name.
 
 3. **Define the main program module:**
     ```
-    #[program]
-    pub mod todo_list_app {
+     #[program]
+     pub mod todo_list_app {
          use super::*;
+     }
     ```
 
 4. **Add the function to create a new task:**
@@ -47,31 +48,12 @@ In this session, select Anchor(Rust) and input ur project name.
 
 5. **Add the function to update an existing task:**
     ```
-         pub fn updating_task(ctx: Context<UpdatingTask>, is_done: bool) -> Result<()> {
-              let task = &mut ctx.accounts.task;
-              let author = &ctx.accounts.author;
-              let clock = Clock::get().unwrap();
-              
-              task.author = *author.key;
-              task.is_done = is_done;
-              task.updated_at = clock.unix_timestamp;
-              Ok(())
-         }
+         Try to do the code yourself based on the example above.
     ```
 
 6. **Add the function to delete a task:**
     ```
-         pub fn deleting_task(ctx: Context<DeletingTask>) -> Result<()> {
-              let task = &mut ctx.accounts.task;
-              let author = &ctx.accounts.author;
-              let clock = Clock::get().unwrap();
-              
-              task.author = *author.key;
-              task.is_done = true;
-              task.updated_at = clock.unix_timestamp;
-              Ok(())
-         }
-    }
+         Try to do the code yourself based on the example above.
     ```
 
 7. **Define the context for adding a task:**
@@ -88,22 +70,12 @@ In this session, select Anchor(Rust) and input ur project name.
 
 8. **Define the context for updating a task:**
     ```
-    #[derive(Accounts)]
-    pub struct UpdatingTask<'info> {
-         #[account(mut, has_one = author)]
-         pub task: Account<'info, Task>,
-         pub author: Signer<'info>,
-    }
+    Try to do the code yourself based on the example above.
     ```
 
 9. **Define the context for deleting a task:**
     ```
-    #[derive(Accounts)]
-    pub struct DeletingTask<'info> {
-         #[account(mut, has_one = author)]
-         pub task: Account<'info, Task>,
-         pub author: Signer<'info>,
-    }
+    Try to do the code yourself based on the example above.
     ```
 
 10. **Define the Task account structure:**
