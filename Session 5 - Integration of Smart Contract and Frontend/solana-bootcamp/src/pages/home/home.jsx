@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import { addTask, updateTask, deleteTask } from "./solanaService";
+import { addTask, updateTask, deleteTask, fetchAllTasks } from "../../api/goalList";
 import "./home.css";
 
 function Home() {
@@ -8,32 +8,48 @@ function Home() {
 
     const handleAddTask = async () => {
         if (taskText) {
-            // await addTask(taskText);
-            // const newTask = {
-            //     publicKey: Date.now().toString(), // Placeholder for unique key
-            //     text: taskText,
-            //     is_done: false
-            // };
-            setTasks([...tasks, taskText]);
-            setTaskText("");
-            fetchTasks(); // Re-fetch tasks after adding
+            try {
+                await addTask(taskText);
+                setTaskText("");
+                fetchAllTasks();
+            } catch (error) {
+                console.error("Error adding task:", error);
+            }
         }
     };
 
     const handleUpdateTask = async (task) => {
-        // await updateTask(task.publicKey, !task.is_done);
-        fetchTasks(); // Re-fetch tasks after updating
+        console.log('task',task);
+        try {
+            await updateTask(task.pubkey, !task.is_done);
+            fetchAllTasks(); // Re-fetch tasks after updating
+        } catch (error) {
+            console.error("Error updating task:", error);
+        }
     };
 
     const handleDeleteTask = async (task) => {
-        // await deleteTask(task.publicKey);
-        fetchTasks(); // Re-fetch tasks after deleting
+        try {
+            await deleteTask(task.pubkey);
+            fetchAllTasks(); // Re-fetch tasks after deleting
+        } catch (error) {
+            console.error("Error deleting task:", error);
+        }
     };
 
-    const fetchTasks = () => {
-        // Fetch tasks logic from the blockchain, update state
-        // Placeholder: You should implement fetching logic based on your smart contract
+    const fetchGoals = async () => {
+        try {
+            const tasks = await fetchAllTasks();
+            setTasks(tasks);
+        } catch (error) {
+            console.error("Error fetching tasks:", error);
+        }
     };
+
+    useEffect(() => {
+        fetchGoals();
+    }, []);
+
 
     return (
         <div>
@@ -47,11 +63,13 @@ function Home() {
             </div>
             <div>
                 {tasks.map((task) => (
-                    <div>
-                        <span>{task}</span>
-                        <button onClick={() => handleUpdateTask(task)}>
-                            {task.is_done ? "Undo" : "Done"}
-                        </button>
+                    <div key={task.publicKey}>
+                        <span>{task.text}</span>
+                        {!task.isDone && (
+                            <button onClick={() => handleUpdateTask(task)}>
+                                Done
+                            </button>
+                        )}
                         <button onClick={() => handleDeleteTask(task)}>
                             Delete
                         </button>

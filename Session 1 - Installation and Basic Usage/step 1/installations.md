@@ -1,10 +1,9 @@
 ## Installation Requirements
-
 # Interaction with Github
 `Git`                             https://git-scm.com/downloads  
 
 # IDE
-`Visual Studio (include C/C++)`     https://visualstudio.microsoft.com/  
+`Visual Studio (include C/C++)`   https://visualstudio.microsoft.com/  
 `Visual Studio Code   `           https://code.visualstudio.com/  
 
 # Programming Languages

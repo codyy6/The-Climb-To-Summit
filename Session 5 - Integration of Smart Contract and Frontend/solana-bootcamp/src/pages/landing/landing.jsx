@@ -6,7 +6,7 @@ async function getAccount() {
         // Connect to the wallet and request the testnet network
         await window.phantom.solana.connect({ network: "testnet" });
         if (window.solana.isConnected) {
-            window.location.href = "/main";
+            window.location.href = "/home";
         }
     } catch (error) {
         console.error("Error connecting to Solana Wallet:", error);
@@ -21,7 +21,7 @@ function Landing() {
                 await window.solana.connect();
                 // If connected, redirect to the main page
                 if (window.solana.isConnected) {
-                    window.location.href = "/main";
+                    window.location.href = "/home";
                 }
             } catch (err) {
                 console.error("Error checking connection:", err);
