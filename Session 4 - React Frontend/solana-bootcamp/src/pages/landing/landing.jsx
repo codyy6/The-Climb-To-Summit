@@ -5,7 +5,7 @@ async function getAccount() {
     try {
         // Connect to the wallet and request the testnet network
         await window.phantom.solana.connect({ network: "testnet" });
-        if (window.solana.isConnected) {
+        if (window.phantom.solana.isConnected) {
             window.location.href = "/main";
         }
     } catch (error) {
@@ -18,9 +18,9 @@ function Landing() {
         const checkConnection = async () => {
             try {
                 // Attempt to connect to solana Wallet
-                await window.solana.connect();
+                await window.phantom.solana.connect();
                 // If connected, redirect to the main page
-                if (window.solana.isConnected) {
+                if (window.phantom.solana.isConnected) {
                     window.location.href = "/main";
                 }
             } catch (err) {
